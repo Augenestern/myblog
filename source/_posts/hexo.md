@@ -1,6 +1,6 @@
 ---
 title: Hexo 基本使用
-top: ture #文章置顶
+# top: ture #文章置顶
 ---
 Hexo是一款基于Node.js的静态博客框架,依赖少易于安装使用,可以方便的生成静态网页托管在GitHub和Coding上,是搭建博客的首选框架。
 <!-- more -->
