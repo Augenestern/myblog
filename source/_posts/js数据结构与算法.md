@@ -3,7 +3,7 @@ title: js数据结构与算法
 top: ture #文章置顶
 ---
 
-js基本数据类型,js中的Object
+js基本数据类型,js中的Object, Array 的方法,栈数据结构，ES5 和 ES6 区别
 
 <!-- more -->
 

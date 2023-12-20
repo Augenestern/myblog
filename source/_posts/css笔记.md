@@ -2,7 +2,7 @@
 title: CSS布局和transform笔记
 ---
 
-position 布局，transform 的基本使用和常用特效
+position 布局，transform 的基本使用和常用特效，display常用方法
 
 <!-- more -->
 
