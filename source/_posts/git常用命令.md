@@ -20,6 +20,8 @@ git checkout -b XXX //以当前本地分支作为基础新建一个XXX分支
 
 git checkout XXX //切换分支
 
+git checkout . //修改的代码(未提交),不修改了
+
 git push origin newtest  //push到远程分支newtest
 
 git push origin --delete newtest //删除远程分支
@@ -34,6 +36,7 @@ git diff //查看差异
 
 git pull //拉取代码
 
-1212222
+git merge xxxx //合并分支，xxx往当前分支插入；
+
 
 ```
