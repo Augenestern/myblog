@@ -4,15 +4,14 @@
 
 # Site
 
-# 网站标题 
-title: 慕杰blog
-subtitle: ''
-description: ''
+# 网站标题
+title: 慕杰BLOG
+subtitle: ""
+description: ""
 keywords:
-author: John Doe
+author: MUJIE
 language: zh-CN
-timezone: ''
-
+timezone: ""
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
@@ -39,31 +38,47 @@ titlecase: false # Transform title into titlecase
 external_link:
   enable: true # Open external links in new tab
   field: site # Apply to the whole site
-  exclude: ''
+  exclude: ""
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+# highlight:
+#   enable: true
+#   line_number: true
+#   auto_detect: false
+#   tab_replace: ''
+#   wrap: true
+#   hljs: false
+# prismjs:
+#   enable: false
+#   preprocess: true
+#   line_number: true
+#   tab_replace: ''
+
 highlight:
   enable: true
-  line_number: true
   auto_detect: false
-  tab_replace: ''
+  line_number: true
+  line_threshold: 0
+  tab_replace: ""
+  exclude_languages:
+    - example
   wrap: true
   hljs: false
 prismjs:
   enable: false
   preprocess: true
   line_number: true
-  tab_replace: ''
-
+  line_threshold: 0
+  tab_replace: ""
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: ""
   per_page: 10
   order_by: -date
 
@@ -83,7 +98,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## updated_option supports 'mtime', 'date', 'empty'
-updated_option: 'mtime'
+updated_option: "mtime"
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -100,6 +115,7 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: hexo-theme-ocean-develop
+# theme: async
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -115,15 +131,14 @@ search:
   content: true
 
 # Extensions
-plugins:
-  hexo-generator-feed
+plugins: hexo-generator-feed
 #RSS
 feed:
-     type: atom
-     path: atom.xml
-     limit: 20
-     hub:
-     content:
-     content_limit: 140
-     content_limit_delim: ' '
-     order_by: -date
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: " "
+  order_by: -date

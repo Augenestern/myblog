@@ -2,8 +2,12 @@
 title: 相册
 date: 2023-06-17 17:55:16
 albums: [
-        ["https://img0.baidu.com/it/u=3834908638,635499117&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800","https://img1.baidu.com/it/u=640593135,209279600&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500","春迈喜欢的"],
-        ["https://img1.baidu.com/it/u=2097999799,3756114847&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500","https://img2.baidu.com/it/u=1693058886,815993951&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500","刘航喜欢的"]
+        # ["https://img0.baidu.com/it/u=3834908638,635499117&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800","https://img1.baidu.com/it/u=640593135,209279600&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500","春迈喜欢的"],
+        # ["https://img1.baidu.com/it/u=2097999799,3756114847&fm=253&fmt=auto&app=138&f=JPEG?w=750&h=500","https://img2.baidu.com/it/u=1693058886,815993951&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500","刘航喜欢的"]
+        ["https://s21.ax1x.com/2024/04/07/pFqHzfe.jpg","https://s21.ax1x.com/2024/04/07/pFqHzfe.jpg","登录页头像"],
+        ["https://s21.ax1x.com/2024/04/07/pFqbpSH.jpg","https://s21.ax1x.com/2024/04/07/pFqbpSH.jpg","登录页头像"],
+        ["http://140.143.208.240:9000/photo/fragvvs.jpg","http://140.143.208.240:9000/photo/fragvvs.jpg",""],
+        ["http://106.52.170.16:9000/img-test/coner%20girl.png","http://106.52.170.16:9000/img-test/coner%20girl.png",""],
         ]
 ---
-<!-- ![美女](https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F22b9b953-ab85-4731-a89d-ae6a80120c40%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1689588685&t=0f7aeb9c07a6bde4a41f154e14ac27da) -->
+<!-- ![美女](https://s11.ax1x.com/2023/07/30/pPp3Ess.jpg) -->

@@ -1,12 +1,13 @@
 ---
-title: CSS布局和transform笔记
+title: css笔记
+top: ture
 ---
 
-position 布局，transform 的基本使用和常用特效，display常用方法,外边距塌陷
+position 布局，transform 的基本使用和常用特效，display常用方法,外边距塌陷,css 中的伪类：before 与 after
 
 <!-- more -->
 
-## 一.position
+## position
 
 Position 的属性值有：
 1.Absolute：绝对定位，是相对于最近的且不是 static 定位的父元素来定位
@@ -15,7 +16,7 @@ Position 的属性值有：
 4.Static：默认值，没有定位。
 5.Inherit：继承父元素的 position 值
 
-## 二.transform 的基本使用和常用特效
+## transform 的基本使用和常用特效
 
 ### 1.平移
 
@@ -85,7 +86,7 @@ transform:skew(30deg,30deg);
 transition: transform 0.2s ease-in-out;
 ```
 
-## 三.transform 的基本使用和常用特效
+## transform 的基本使用和常用特效
 1.animation：动画
 2.*animation-name：关键帧的名字，该参数必需。
 3.*animation-duration：动画持续的时间，该参数必需。
@@ -126,7 +127,7 @@ keyframes rotation {
   }
 }
 ```
-## 四.display常用方法
+## display常用方法
 
 ### 1.flex布局
 ```js
@@ -159,7 +160,7 @@ align-items: 定义了项目在交叉轴上的对齐方式
   baseline: 项目的第一行文字的基线对齐
 ```
 
-## 五.外边距塌陷
+## 外边距塌陷
 
 外边距只塌路也称外边距合并，在文档流中相邻兄弟或父子关系的块级元素的外边距组合在一起变成单个外边距，只有在上下外边距才会出现塌陷，左右不会出现
 解析，1.两个嵌套块级元素Q，父元素如果没有上补白和上边框，那么它的上边距会和它的文档流中的的第一个子元素的上边距重叠，取两者较大的值，父元素上的外边距为0，也会发生合并。(通俗来说: 子元素找不到父元素的border或者padding.就会与父元素上边距重季)
@@ -179,4 +180,90 @@ align-items: 定义了项目在交叉轴上的对齐方式
 7.overflow: auto
 ```
 
+## css 中的伪类：before 与 after
+```js
+//破碎图片占位,当用户网络出现问题的时候，可能会造成某些图片的访问失败
 
+img::before {
+  background-color: #eeeeee;
+  border: #aaaaaa;
+  display: block;
+  height: 100%;
+  content: attr(alt);
+  text-align: center;
+}
+
+//自定义引用样式
+blockquote::before {
+  content: open-quote;
+  top: 0;
+  left: 0;
+}
+
+blockquote::after {
+  content: close-quote;
+  bottom: 0;
+  right: 0;
+}
+
+blockquote::before,
+blockquote::after {
+  background-color: #cccccc;
+  display: block;
+  width: 60px;
+  height: 60px;
+  line-height: 1.618;
+  font-size: 3em;
+  border-radius: 100%;
+  text-align: center;
+  position: absolute;
+}
+
+//图片渐变叠加
+figure::before {
+  background-image: linear-gradient(to top right, #1a1a1a, transparent);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+```
+## html中meta什么作用,HTML中各种常用meta标签的作用
+[查看](https://blog.csdn.net/weixin_32643811/article/details/117950069)
+
+## 媒体查询（media query）
+媒体查询是css3新语法，可以针对不同的媒体类型定义不同的样式，可简单理解为根据页面不同的宽度，来使用不同的css样式。
+
+```js
+///and only not;
+@media media-type and (media-feature) {
+  /* CSS 样式规则 */
+}
+
+media-type 可以是 screen--(用于电脑屏幕，ipad，手机等)、print--(用于打印机)、all--(用于所有设备) 等，表示媒体类型。
+media-feature 是一个媒体特性，例如 width、height、orientation 等，用于检查设备属性。
+
+
+/* 默认样式 */
+p {
+  font-size: 16px;
+}
+
+/* 在小屏幕上调整文本大小 */
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+/* 在非常小的屏幕上进一步调整文本大小 */
+@media screen and (max-width: 480px) {
+  p {
+    font-size: 12px;
+  }
+}
+
+
+```
+[详细](https://blog.csdn.net/jhxl_/article/details/132400594)

@@ -7,17 +7,12 @@ title: vue3+vite+ts项目笔记
 <!-- more -->
 
 #### 搭建项目: [点击](https://blog.csdn.net/weixin_59916662/article/details/127331094)
-
-## 数据代理
-
-vue2.x : Object.defineProperty()
-vue3.x : Proxy
-
+#### vue官网: [进入](https://cn.vuejs.org/guide/components/v-model.html)
 ## 父子组件传值
 
 ### 1.父传子
 
-```bash
+```js
 <div>父组件
   <list :msg="msg"></list>
 </div>
@@ -25,7 +20,7 @@ vue3.x : Proxy
 let msg = ref('传过去的')
 ```
 
-```bash
+```js
 <div>这是子组件{{msg}}</div>
 
 defineProps({
@@ -38,7 +33,7 @@ defineProps({
 
 ### 2.子传父
 
-```bash
+```js
 <div>这是子组件{{msg}}
   <button @click="changeNum">按钮</button>
 </div>
@@ -53,7 +48,7 @@ const changeNum = ()=>{
 }
 ```
 
-```bash
+```js
 <div>父组件
   <list @fn='changeHome'></list>
 </div>
@@ -64,32 +59,7 @@ let changeHome = (n)=>{
 ```
 
 ### 3.v-model 传值
-
-```bash
-<div>父组件
-  <list v-model:num = "num"></list>
-</div>
-
-let num = ref(1)
-```
-
-```bash
-<div>这是子组件{{num}}
-  <button @click="btn">按钮</button>
-</div>
-
-const props = refineProps({
-    num:{
-        type:Number,
-        default:100
-    }
-})
-const emit = defineEmits(['update:num'])
-const btn = ()=>{
-    emit('update:num',200)
-}
-
-```
+[看官网](https://cn.vuejs.org/guide/components/v-model.html)
 
 ## 兄弟组件传值
 
@@ -99,7 +69,7 @@ const btn = ()=>{
 
 #### 1）.下载安装
 
-```bash
+```js
 npm install mitt -S
 ```
 
@@ -107,14 +77,14 @@ npm install mitt -S
 
 src/plugins/Bus.js
 
-```bash
+```js
 //bus.js内
 import mitt from 'mitt';
 const emitter = mitt()
 export default emitter;
 ```
 
-```bash
+```js
 //兄弟组件A中
 import emitter from "@plugins/Bus.js"
 let str = ref("A值")
@@ -123,7 +93,7 @@ const btn = ()=>{
 }
 ```
 
-```bash
+```js
 //兄弟组件B中 接收
 import emitter from "@plugins/Bus.js"
 let s = ref("")
@@ -139,7 +109,7 @@ const btn = ()=>{
 
 ### 1.匿名插槽
 
-```bash
+```js
 父：
 <A>
     这是xxx数据
@@ -147,7 +117,7 @@ const btn = ()=>{
 </A>
 ```
 
-```bash
+```js
 子：
 <div>
     <div>头部</div>
@@ -161,7 +131,7 @@ const btn = ()=>{
 
 ### 2.具名插槽
 
-```bash
+```js
 父：
 <A>
     <template v-slot:xxx>
@@ -173,7 +143,7 @@ const btn = ()=>{
 </A>
 ```
 
-```bash
+```js
 子：
 <div>
     <div>头部</div>
@@ -187,7 +157,7 @@ const btn = ()=>{
 
 ### 3.作用域插槽
 
-```bash
+```js
 父：
 <template v-slot="{data}">
     {{ data.name }}---{{ data.age }}
@@ -198,7 +168,7 @@ const btn = ()=>{
 </template>
 ```
 
-```bash
+```js
 子：
 <div>
     <slot :data="item"></slot>
@@ -209,7 +179,7 @@ const btn = ()=>{
 
 就是通过数据动态切换插槽名
 
-```bash
+```js
 父：
 <template #[name]>
     这是xxx
@@ -217,7 +187,7 @@ const btn = ()=>{
 let name = ref('xxx')
 ```
 
-```bash
+```js
 子：
 <div>
     <slot name="xxx"></slot>
@@ -228,7 +198,7 @@ let name = ref('xxx')
 
 传送
 
-```bash
+```js
 <Teleport to="body"></Teleport>
 <Teleport to=".mian"></Teleport>
 <Teleport to="#container"></Teleport>
@@ -236,7 +206,7 @@ let name = ref('xxx')
 
 ## 依赖注入
 
-```bash
+```js
 //父组件：提供
 provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
 //如果你想确保提供的数据不能被注入方的组件更改，你可以使用 readonly() 来包装提供的值
@@ -244,28 +214,38 @@ provide('read-only-message', readonly(message))
 
 //子孙组件：注入
 const message = inject('message')
+
+//注入默认值
+// 如果没有祖先组件提供 "message"
+// `value` 会是 "这是默认值"
+const value = inject('message', '这是默认值')
+
+//使用 Symbol 作注入名
+我们通常推荐在一个单独的文件中导出这些注入名 Symbol：
+// keys.js
+export const myInjectionKey = Symbol()
+
+// 在供给方组件中
+import { provide } from 'vue'
+import { myInjectionKey } from './keys.js'
+provide(myInjectionKey, { /*
+  要提供的数据
+*/ });
+
+// 注入方组件
+import { inject } from 'vue'
+import { myInjectionKey } from './keys.js'
+const injected = inject(myInjectionKey)
 ```
 
 
-## js 数组
 
-```bash
-//使用slice()方法返回一个子数组，在进行reverse； 不会改变原数组
-time1 = time.slice().reverse()  //time1数组反转  time数组不变
-```
-## js 取整
-```bash
-parseInt()   //向0取整
-Math.floor()  //向下取整
-Math.ceil()  //向上取整
-Math.trunc()  //去除数字的小数部分，保留整数部分
-Math.round()  //返回一个数字四舍五入后的整数部分
+
+```js
+//刷新页面
+<meta http-equiv="refresh" content="5">
 ```
 
-```bash
-
-```
-
-```bash
+```js
 
 ```

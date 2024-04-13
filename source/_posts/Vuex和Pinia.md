@@ -17,13 +17,13 @@ title: Vuex和Pinia
 
 注意：vue 的 2.x 版本对应 vuex 的 3.x 版本，vue 的 3.x 版本对应 vuex 的 4.x 版本
 
-```bash
+```js
 npm install --save vuex@3.6.2
 ```
 
 在 src 目录下新建 store 文件夹，创建 index.js 文件引入、安装、创建并导出 Vuex 对象。
 
-```bash
+```js
 import Vue from 'vue'
 import Vuex from 'vuex'
 //1.安装插件
@@ -45,7 +45,7 @@ export default store
 
 样例如下：
 
-```bash
+```js
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -98,7 +98,7 @@ export default new Vuex.Store({
 
 在 main.js 文件中挂载使用
 
-```bash
+```js
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -119,13 +119,13 @@ new Vue({
 
 1.getter 方法的调用
 
-```bash
+```js
 this.$store.getters.resturantName
 ```
 
 state 状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态，如下：
 
-```bash
+```js
 computed: {
   resturantName: function() {
     return this.$store.getters.resturantName;
@@ -136,14 +136,14 @@ computed: {
 2.mutations 中方法的调用方式
 不能直接调用 this.$store.mutations.setResturantName('KFC')，必须使用如下方式调用：this.$store.commit(type,payload);
 
-```bash
+```js
 // 1、把载荷和type分开提交
 this.$store.commit('setResturantName',{
   resturantName:'KFC'
 })
 ```
 
-```bash
+```js
 // 2、载荷和type写到一起
 this.$store.commit({
   type: 'setResturantName',
@@ -153,7 +153,7 @@ this.$store.commit({
 
 3.actions 数据的静态异步(async)操作
 
-```bash
+```js
 this.$store.dispatch('xxx',{
   name:'KFC'
 })
@@ -163,13 +163,13 @@ this.$store.dispatch('xxx',{
 
 ### 1.Pinia 的安装和注册
 
-```bash
+```js
 npm install pinia
 ```
 
 在 src 目录下新建 store 文件夹，创建 index.js 文件引入、安装、创建并导出 Pinia 对象。
 
-```bash
+```js
 import { defineStore } from 'pinia'
 
 //defineStore()：创建仓库容器的方法，主要有两个参数，第一个参数是容器的一个别名，
@@ -185,7 +185,7 @@ export const indexStore = defineStore('index', {
 
 样例如下：
 
-```bash
+```js
 import { defineStore } from 'pinia'
 // useMain  可以是 useUser、useCart 之类的名字
 // defineStore('main',{..}) 在devtools 就使用 main 这个名
@@ -220,7 +220,7 @@ export const useMain = defineStore('main', {
 
 在 main.js 文件中挂载使用
 
-```bash
+```js
 import { createApp } from 'vue'
 import App from './App.vue'
 import {createPinia} from 'pinia'
@@ -233,7 +233,7 @@ createApp(App).use(ElementPlus).use(router).use(store).mount('#app')
 
 1.获取数据
 
-```bash
+```js
 <template>
   <h3>{{store.helloWorld}}</h3>
   <h3>解构：{{ helloWorld }}</h3>
@@ -249,7 +249,7 @@ const { helloWorld } = storeToRefs(store)
 
 2.$patch 的两种方法
 
-```bash
+```js
 <script lang="ts" setup>
 import { indexStore } from "../store";
 const store = indexStore()
@@ -275,7 +275,7 @@ const handleClickMethod = () => {
 3.使用 actions，注意 actions 中的 this 指向，这里不能使用箭头函数
 在/store 中：
 
-```bash
+```js
 import { defineStore } from 'pinia'
 
 export const indexStore = defineStore('main', {
@@ -295,7 +295,7 @@ export const indexStore = defineStore('main', {
 
 在/Hello 中：
 
-```bash
+```js
 <script lang="ts" setup>
 import { indexStore } from "../store";
 const store = indexStore()
@@ -308,7 +308,7 @@ const handleClickActions = () => {
 
 4.重置
 
-```bash
+```js
 import { indexStore } from "../store";
 const store = indexStore()
 store.$reset()
@@ -318,13 +318,13 @@ store.$reset()
 
 #### 1.安装 pinia-plugin-persistedstate 插件
 
-```bash
+```js
 npm i pinia-plugin-persistedstate
 ```
 
 #### 2.安装完成后 在 main.ts/js 文件内进行配置
 
-```bash
+```js
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate  from 'pinia-plugin-persistedstate'
@@ -344,7 +344,7 @@ app.mount('#app')
 
 #### 3.store 里添加 persist: true，与 getters 同级
 
-```bash
+```js
 getters: {
 },
 // 相当于vuex的 mutation + action，可以同时写同步和异步的代码

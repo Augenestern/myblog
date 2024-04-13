@@ -8,7 +8,8 @@ menu:
 rss: /atom.xml
 
 # Miscellaneous
-favicon: /favicon.ico
+# favicon: /favicon.ico
+favicon: /study.svg
 brand: /images/shark.svg
 
 # Ocean Video

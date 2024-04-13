@@ -11,13 +11,13 @@ title: vue3异步组件
 
 下载包
 
-```bash
+```js
 npm install @vueuse/core -S
 ```
 
 向下滑出现这个 C 组件才会加载 C 组件
 
-```bash
+```js
 <template>
     <div class="home">
         <A></A>
@@ -55,7 +55,7 @@ useIntersectionObserver(
 
 ## 场景二 异步依赖，搭配 Suspense 使用
 
-```bash
+```js
 <Suspense>
     <template #default>
         <A></A>
@@ -72,7 +72,7 @@ const A = defineAsyncComponent(() =>
 
 一般是这种用法：
 
-```bash
+```js
 <div ref="target">
     <Suspense v-if="targetIsVisible">
         <template #default>

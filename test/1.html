@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .testText {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #testButton {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="testText">
+        哈哈哈
+    </div>
+    <button id="testButton">测试1</button>
+    <button id="testButton2">测试2</button>
+    <script>
+
+        //死循环指定时间
+        function delay(duration) {
+            var start = Date.now()
+            while (Date.now() - start < duration){}
+        }
+        // 通过 JavaScript 在按钮上添加点击事件监听器
+        document.getElementById('testButton').addEventListener('click', function () {
+            document.querySelector('.testText').innerHTML = "呵呵呵"
+            delay(3000)
+        });
+        document.getElementById('testButton2').addEventListener('click', function () {
+            document.querySelector('.testText').innerHTML = "嘻嘻嘻"
+        });
+    </script>
+</body>
+
+</html>
