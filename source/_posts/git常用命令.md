@@ -7,7 +7,7 @@ git 常用命令
 
 <!-- more -->
 
-```bash
+```ts
 git clone XXXX; //克隆远程分支
 
 git add .  //添加到本地仓库
@@ -38,5 +38,14 @@ git pull //拉取代码
 
 git merge xxxx //合并分支，xxx往当前分支插入；
 
+git reset --mixed  //文件退出暂存区，但是修改保留；
+
+git reset HEAD . //
+
+git reset HEAD fileName // 撤销某个文件；
+
+git reset --soft HEAD^ //撤销commit之后返回成暂存区add状态；
+
+git reset --hard HEAD^  //直接撤销commit和add
 
 ```
