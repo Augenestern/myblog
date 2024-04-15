@@ -4,7 +4,9 @@ menu:
   归档: /archives
   相册: /gallery
   收藏: /favorites
+  # 标签: /tags
   关于: /about
+  # 图片: /image
 rss: /atom.xml
 
 # Miscellaneous

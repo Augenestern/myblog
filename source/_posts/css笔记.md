@@ -9,7 +9,7 @@ position 布局，transform 的基本使用和常用特效，display 常用方�
 
 ## position
 
-Position 的属性值有：
+**Position 的属性值有：**
 1.Absolute：绝对定位，是相对于最近的且不是 static 定位的父元素来定位
 2.Fixed：绝对定位，是相对于浏览器窗口来定位的，是固定的，不会跟屏幕一起滚动。
 3.Relative：相对定位，是相对于其原本的位置来定位的。
@@ -22,20 +22,20 @@ Position 的属性值有：
 
 ```css
 /* x表示x轴移动的坐标，y表示y轴移动的坐标 */
-/* transform: translate(30px,30px); */
+transform: translate(30px, 30px);
 /* x轴移动的坐标，y轴不变  */
-/* transform: translateX(30px); */
+transform: translateX(30px);
 /* y轴移动的坐标，x轴不变  */
-/* transform: translateY(30px); */
+transform: translateY(30px);
 /* 百分比参照的单位是自身的宽高，在这里也就是100px; */
-/* transform: translate(50%,50%); */
+transform: translate(50%, 50%);
 ```
 
 ### 2.旋转
 
 ```css
 /* deg相当于度单位，表示旋转45度; */
-/* transform: rotate(45deg); */
+transform: rotate(45deg);
 ```
 
 ```css
@@ -48,9 +48,9 @@ Position 的属性值有：
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
-  transition: transform 0.5s; //设置transform动画效果时间
-  // transform-origin设置旋转中心点
-  /* transform-origin: bottom left; */
+  transition: transform 0.5s; /*设置transform动画效果时间*/
+  /* transform-origin设置旋转中心点 */
+  transform-origin: bottom left;
   /* transform-origin: 50px 50px;  */
 }
 .first:hover {
@@ -63,23 +63,23 @@ Position 的属性值有：
 不会影响其他盒子
 
 ```css
-/*  transition: transform 0.7s; //设置transform动画效果时间 */
+transition: transform 0.7s; /* 设置transform动画效果时间*/
 .first:hover {
   /* 表示xy的倍数，小于1的为缩小，大于1为放大 */
-  /* transform: scale(2,2); */
+  transform: scale(2, 2);
   /* 也可以写成一个表示xy比例一样 */
-  /* transform: scale(2); */
+  transform: scale(2);
 }
 ```
 
 ### 4.倾斜
 
 ```css
-transform:skew(30deg);
-transform:skew(30deg,30deg);
-# 一个参数时：表示水平方向的倾斜角度。
-# 两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度 。
-# skew 的默认原点 transform-origin 是这个物件的中心点。
+transform: skew(30deg);
+transform: skew(30deg, 30deg);
+/* 一个参数时：表示水平方向的倾斜角度。 */
+/* 两个参数时：第一个参数表示水平方向的倾斜角度，第二个参数表示垂直方向的倾斜角度 。 */
+/* skew 的默认原点 transform-origin 是这个物件的中心点。 */
 ```
 
 ### 5.transform 动画效果
@@ -138,24 +138,23 @@ keyframes rotation {
 ### 1.flex 布局
 
 ```css
-flex-direction: 决定主轴的方向(即项目的排列方向) 默认值：row，主轴为水平方向，起点在左端。
-  row-reverse：主轴为水平方向，起点在右端 column：主轴为垂直方向，起点在上沿 column-reverse：主轴为垂直方向，起点在下沿;
+flex-direction: /* 决定主轴的方向(即项目的排列方向) 默认值：row，主轴为水平方向，起点在左端。 */ row-reverse：; /* 主轴为水平方向，起点在右端 column：主轴为垂直方向，起点在上沿 column-reverse：主轴为垂直方向，起点在下沿;*/
 ```
 
 ```css
-flex-wrap: 决定容器内项目是否可换行 默认值：nowrap
-  不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整(变形) 而并不会挤到下一行。
-  wrap：项目主轴总尺寸超出容器时换行，第一行在上方 wrap-reverse：换行，第一行在下方;
+flex-wrap: /* 决定容器内项目是否可换行 默认值：*/
+nowrap/* 不换行，即当主轴尺寸固定时，当空间不足时，项目尺寸会随之调整(变形) 而并不会挤到下一行。*/
+wrap：/* 项目主轴总尺寸超出容器时换行，第一行在上方 wrap-reverse：换行，第一行在下方;*?
 ```
 
 ```css
-justify-content：定义了项目在主轴的对齐方式。
-默认值: flex-start 左对齐
-flex-end：右对齐
-center：居中
-space-between：两端对齐，项目之间的间隔相等，即剩余空间等分成间隙。
-space-around：每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。(边0.5，间隔1)
-space-evenly:均匀分布，首尾都有相等的间隔(1:1:1)
+justify-content： /*定义了项目在主轴的对齐方式。*/
+flex-start /*默认值: 左对齐*/
+flex-end /*右对齐*/
+center /*居中*/
+space-between /*两端对齐，项目之间的间隔相等，即剩余空间等分成间隙。*/
+space-around /*每个项目两侧的间隔相等，所以项目之间的间隔比项目与边缘的间隔大一倍。(边0.5，间隔1)*/
+space-evenly /*均匀分布，首尾都有相等的间隔(1:1:1)*/
 ```
 
 ```css
@@ -185,46 +184,48 @@ align-self:单独为某个设置
 ### 2.grid 布局
 
 ```css
-grid-template-columns: repeat(4,1fr);
+grid-template-columns: repeat(4, 1fr);
 /* grid-template-columns: repeat(auto-fill,minmax(100px,1fr)); */
 /* grid-template-rows: 1fr 1fr; */
 /* gap: 10px 10px; */
 ```
+
 [详情](https://blog.csdn.net/weixin_41192489/article/details/115588135)
 
 常用：
+
 ```css
 .MBox {
-    width: 600px;
-    height: 400px;
-    /* height: 100vh;    */
-    background-color: aqua;
-    /* display: flex; */
-    /* overflow: auto; */
-    /* flex-wrap: wrap; */
-    /* justify-content: center; */
-    display: grid;
-    /* 设置几列 */
-    grid-template-columns: repeat(4,1fr);
-    /* grid-template-columns: repeat(auto-fill,minmax(100px,1fr)); */
-    /* grid-template-rows: 1fr 1fr; */
-    gap: 10px 10px;
+  width: 600px;
+  height: 400px;
+  /* height: 100vh;    */
+  background-color: aqua;
+  /* display: flex; */
+  /* overflow: auto; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  display: grid;
+  /* 设置几列 */
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-columns: repeat(auto-fill,minmax(100px,1fr)); */
+  /* grid-template-rows: 1fr 1fr; */
+  gap: 10px 10px;
 }
-.MBox .item{
-    /* width: 100px; */
-    /* height: 100px; */
-    /* 不压缩且不扩大元素  */
-    /* flex: 0 0 auto;   */
-    /* margin: 10px 10px 0 0; */
-    background-color: red;
-    box-sizing: border-box;
-    border: 1px solid black;
+.MBox .item {
+  /* width: 100px; */
+  /* height: 100px; */
+  /* 不压缩且不扩大元素  */
+  /* flex: 0 0 auto;   */
+  /* margin: 10px 10px 0 0; */
+  background-color: red;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
-.item:first-child{
-    /* grid-row: span 2; */
-    grid-row: 1/3;
-    /* grid-column: span 4; */
-    grid-column: 1/5;
+.item:first-child {
+  /* grid-row: span 2; */
+  grid-row: 1/3;
+  /* grid-column: span 4; */
+  grid-column: 1/5;
 }
 /* .item:nth-child(3n){
     margin-right: 0px;
@@ -234,6 +235,7 @@ grid-template-columns: repeat(4,1fr);
     flex: auto;
 } */
 ```
+
 ## 外边距塌陷
 
 外边距只塌路也称外边距合并，在文档流中相邻兄弟或父子关系的块级元素的外边距组合在一起变成单个外边距，只有在上下外边距才会出现塌陷，左右不会出现

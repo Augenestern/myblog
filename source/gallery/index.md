@@ -10,4 +10,4 @@ albums: [
         ["http://106.52.170.16:9000/img-test/coner%20girl.png","http://106.52.170.16:9000/img-test/coner%20girl.png",""],
         ]
 ---
-<!-- ![美女](https://s11.ax1x.com/2023/07/30/pPp3Ess.jpg) -->
+![美女](../image/路过宇宙.jpg)
