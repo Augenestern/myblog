@@ -1,6 +1,8 @@
 ---
 title: vue笔记
 top: ture
+
+date: 2024-01-13 08:23:18
 ---
 
 谈谈你对 vue 的理解

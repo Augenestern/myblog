@@ -118,3 +118,16 @@ console.log(memoizeAdd(1,3));
 console.log(memoizeAdd(1,3));
 console.log(memoizeAdd(3,3));
 console.log(memoizeAdd(1,3));
+
+
+
+
+
+
+
+
+
+
+
+
+

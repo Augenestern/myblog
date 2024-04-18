@@ -1,6 +1,7 @@
 ---
 title: typescript学习
 # top: ture #文章置顶
+date: 2023-12-12 08:05:17
 ---
 
 typescript 学习

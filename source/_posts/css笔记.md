@@ -1,6 +1,8 @@
 ---
 title: css笔记
 top: ture
+
+date: 2023-10-01 10:53:17
 ---
 
 position 布局，transform 的基本使用和常用特效，display 常用方法,外边距塌陷,css 中的伪类：before 与 after

@@ -1,5 +1,6 @@
 ---
 title: Vuex和Pinia
+date: 2023-09-20 11:03:34
 #文章封面图
 # photos: [
 #         ["https://img1.baidu.com/it/u=640593135,209279600&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"],
