@@ -112,20 +112,56 @@ const memoize = (func, content) => {
         return cache[args];
     }
 }
-const add = (a, b) => a + b
-const memoizeAdd = memoize(add);
-console.log(memoizeAdd(1,3));
-console.log(memoizeAdd(1,3));
-console.log(memoizeAdd(3,3));
-console.log(memoizeAdd(1,3));
+// const add = (a, b) => a + b
+// const memoizeAdd = memoize(add);
+// console.log(memoizeAdd(1,3));
+// console.log(memoizeAdd(1,3));
+// console.log(memoizeAdd(3,3));
+// console.log(memoizeAdd(1,3));
+
+function name(...args) {
+    console.log(typeof args);
+}
+
+
+name(1,23);
+
+let num = 0;
+console.log(num++,'erer');
+console.log(++num);
+console.log(num);
+
+console.log('------------');
+for (var i = 0; i <3; i++) {
+    setTimeout(() => {
+       console.log(i);
+    }, 0);
+}
+
+for (let i = 0; i <3; i++) {
+    setTimeout(() => {
+        console.log(i);
+    }, 0);
+}
+
+console.log('ssssssssssssssssss')
+// 假设这是你的 JSON 对象数组
+let jsonArray = [
+    { name: 'aaa', age: 20 },
+    { name: 'bbb', age: 25 },
+    { name: 'ccc', age: 30 },
+    { name: 'ddd', age: 35 }
+];
+
+// 使用 filter() 方法删除满足条件的对象
+jsonArray = jsonArray.filter(item => item.age !== 20);
+
+// 输出删除后的数组
+console.log(jsonArray);
 
 
 
-
-
-
-
-
+//
 
 
 
