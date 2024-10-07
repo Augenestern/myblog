@@ -50,7 +50,9 @@ function Person(name, age, score) {
 }
 
 let rest = myNew(Person, "dmc", 21, 100);
-console.log(rest);
+// console.log(rest);
+
+
 
 
 

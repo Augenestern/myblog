@@ -62,7 +62,7 @@ function Observer(data_instance) {
             configurable: true, // 属性描述符可被改
             get() {
                 // console.log('getter函数获取当前属性为', key, '的值：', value)
-
+                
                 // 验证订阅者已经被添加
                 Dependency.temp && console.log('获取到Dependency的临时属性', Dependency.temp)
                 // 将订阅者加入依赖实例的数组

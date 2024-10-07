@@ -1,0 +1,7 @@
+{
+    "Lingma.cloudModelAutoTriggerGenerateLength": "disable",
+    "Lingma.cloudModelEnable": true,
+    "Lingma.cloudModelAutoTriggerDisplayRule": true,
+    "Lingma.localMachineModel": true,
+    "Lingma.methodQuickOperation": true
+}

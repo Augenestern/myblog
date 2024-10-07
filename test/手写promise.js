@@ -1,5 +1,10 @@
 class myPromise {
     static pending = '待定'; static fulfilled = '成功'; static rejected = '失败';
+    static resolve(value) {
+        return new myPromise((resolve) => {
+            resolve(value)
+        })
+    };
     constructor(func) {
         this.status = myPromise.pending;
         this.result = null;
@@ -57,6 +62,34 @@ class myPromise {
             };
         })
     };
+
+    catch(onRejected) {
+        return this.then(undefined, onRejected);
+    }
+
+    static all(taskArr) {
+        return new myPromise((resolve, reject) => {
+            let results = [];
+            let completed = 0;
+            for (let i = 0; i < taskArr.length; i++) {
+                taskArr[i].then((res) => {
+                    results[i] = res;
+                    completed++;
+                    if (completed == taskArr.length) {
+                        resolve(results)
+                    }
+                }).catch(reject)
+            }
+        })
+    }
+
+    static race(taskArr) {
+        return new myPromise((resolve, reject) => {
+            for (let i = 0; i < taskArr.length; i++) {
+                taskArr[i].then(resolve).catch(reject)
+            }
+        })
+    }
 }
 
 
@@ -85,6 +118,17 @@ let myCommit = new myPromise((resolve, reject) => {
     reject => { console.log(reject.message); }
 )
 console.log('第三');
+
+
+// 示例用法
+let promise1 = myPromise.resolve(1);
+let promise2 = new myPromise((resolve) => setTimeout(() => resolve(2), 4000));
+let promise3 = new myPromise((resolve) => setTimeout(() => resolve(3), 500));
+
+myPromise.race([promise1, promise2, promise3])
+    .then((results) => console.log(results), (reject) => {
+        console.log(reject);
+    })
 
 
 
