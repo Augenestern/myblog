@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first {
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            border: 2px solid brown;
+            /*不要上边框和左边框后旋转45度即可*/
+            border-top: none;
+            border-left: none;
+            transform: rotate(45deg);
+            transition: transform 0.5s;
+            /*设置transform动画效果时间*/
+            /* transform-origin设置旋转中心点 */
+            transform-origin:50%;
+            /* transform-origin: 50px 50px;  */
+        }
+
+        .first:hover {
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first"></div>
+</body>
+
+</html>
